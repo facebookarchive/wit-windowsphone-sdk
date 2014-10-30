@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wit="clr-namespace:WitAi;assembly=WitAI"
+    x:Class="WitAiSample.MainPage"
+    mc:Ignorable="d"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+	shell:SystemTray.Opacity="0" FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource PhoneForegroundBrush}">
+
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="32"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<ProgressBar x:Name="ProgressBar" IsEnabled="True" VerticalAlignment="Top" Background="{x:Null}"/>
+
+		<StackPanel x:Name="TitlePanel" Grid.Row="1" Margin="12,17,0,28">
+			<TextBlock Text="WIT AI" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" FontSize="22.667"/>
+			<TextBlock Text="sample" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+		</StackPanel>
+
+		<Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel VerticalAlignment="Top">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type: wake me up at 8am?" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				<TextBox x:Name="WitText" VerticalAlignment="Top" InputScope="Search" KeyUp="WitText_KeyUp" Width="456"/>
+
+			</StackPanel>
+			<TextBlock Grid.Row="1" Margin="0,12" x:Name="WitIntent" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<StackPanel Orientation="Vertical" Grid.Row="2" Margin="0,12">
+				<TextBlock TextWrapping="Wrap" Text="Or try to say something" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" HorizontalAlignment="Center"/>
+				<wit:WitMicButton x:Name="WitMicButton" DetectSpeechStop="True" AccessToken="CBP3OGVVJI23M5XAH7ARKOMDDSKB3HJV" Margin="12" Height="120" CaptureVoiceIntentStarted="WitMicButton_CaptureVoiceIntentStarted" CaptureVoiceIntentStopped="WitMicButton_CaptureVoiceIntentStopped" CaptureVoiceIntentCompleted="WitMicButton_CaptureVoiceIntentCompleted" />
+			</StackPanel>
+		</Grid>
+
+		
+
+	</Grid>
+
+</phone:PhoneApplicationPage>

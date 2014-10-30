@@ -1,0 +1,15 @@
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\WitAI.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\WitAI.pdb
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.xml
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\Bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\obj\Debug\Wit.AI.csprojResolveAssemblyReference.cache
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\obj\Debug\WitMicButton.g.cs
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\obj\Debug\WitAI.g.resources
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\obj\Debug\WitAI.dll
+C:\Users\Ku6opr\Desktop\WitAi\WitAi\WitAi\obj\Debug\WitAI.pdb
