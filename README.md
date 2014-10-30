@@ -52,12 +52,16 @@ Weíll add a recording button to the main screen of the app.
 
 add xmlns:wit="clr-namespace:WitAi;assembly:WitAi" to xmlns section of MainPage.xaml
 
+```
 <wit:WitMicButton />
+```
 
 Than we need to enter our access token so Wit.AI knows what instance we are querying.
 You can grab it from your Wit console, under Settings\Access Token.
 
+```
 <wit:WitMicButton AccessToken="CBP3OGVVJI23M5XAH7ARKOMDDSKB3HJV" />
+```
 
 WitMicButton provides several events related to voice capturing
 
