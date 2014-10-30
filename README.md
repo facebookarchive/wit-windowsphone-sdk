@@ -109,7 +109,7 @@ else
    WitIntent.Text = "Intent not found";
 }
 ```
-Note: you should mark your method as async to use await operator inside
+Note: you should mark your method as `async` to use `await` operator inside
 
 ## Run your app
 That is it! Just run the app in the emulator.
@@ -124,4 +124,4 @@ Hooray!
 If your instance is brand new, it will need a bit of training before yielding satisfying results.
 Please refer to the Quickstart tutorial.
 
-You can find the code for this tutorial at [link]
+While setuping use ```Wit.DebugMode = true;``` to get all information to better understand what's going on inside
