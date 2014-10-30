@@ -116,7 +116,7 @@ Note: you should mark your method as async to use await operator inside
 ## Run your app
 That is it! Just run the app in the emulator.
 Press the microphone button and say `Wake me up at 7am`.
-Provided your instance has an ìalarmî intent, you should see this something like this
+Provided your instance has an `alarm` intent, you should see this something like this
 
 Now go check your inbox.
 The command you just said should be there. Click the wave icon next to the sentence to play the audio file.
