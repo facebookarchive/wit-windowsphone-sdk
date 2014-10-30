@@ -15,7 +15,7 @@ As we want to focus on the Wit SDK integration, the app will only display the us
 ## Prerequisites
 To follow this tutorial, you will need:
 
-- A Wit.AI account
+- A Wit.ai account
 - Windows Phone SDK [https://dev.windows.com/en-us/develop/download-phone-sdk] (tested on Windows Phone SDK 8.0 and Visual Studio 2012)
 
 ## The Windows Phone project
@@ -56,7 +56,7 @@ add xmlns:wit="clr-namespace:WitAi;assembly:WitAi" to xmlns section of MainPage.
 <wit:WitMicButton />
 ```
 
-Than we need to enter our access token so Wit.AI knows what instance we are querying.
+Than we need to enter our access token so Wit.ai knows what instance we are querying.
 You can grab it from your Wit console, under Settings\Access Token.
 
 ```
@@ -66,15 +66,18 @@ You can grab it from your Wit console, under Settings\Access Token.
 WitMicButton provides several events related to voice capturing
 
 subscribing to WitMicButton events in xaml:
+```
 <wit:WitMicButton x:Name="WitMicButton" AccessToken="<AccessToken>" CaptureVoiceIntentStarted="WitMicButton_CaptureVoiceIntentStarted" CaptureVoiceIntentStopped="WitMicButton_CaptureVoiceIntentStopped" CaptureVoiceIntentCompleted="WitMicButton_CaptureVoiceIntentCompleted" />
-
+```
 subscribing to WitMicButton events in code:
+```
 WitMicButton.CaptureVoiceIntentStarted += WitMicButton_CaptureVoiceIntentStarted;
 WitMicButton.CaptureVoiceIntentStopped += WitMicButton_CaptureVoiceIntentStopped;
 WitMicButton.CaptureVoiceIntentCompleted += WitMicButton_CaptureVoiceIntentCompleted;
-
+```
 And here is event handlers for this events:
 
+```
 private void WitMicButton_CaptureVoiceIntentStarted(object sender, EventArgs e)
 {
     // voice capture started
@@ -89,13 +92,14 @@ private void WitMicButton_CaptureVoiceIntentCompleted(object sender, WitResponse
 {
     // voice capture completed; use witResponse to access captured data
 }
+```
 
-Note that you can also call Wit programmatically using the - Task<string> CaptureVoiceIntent() instance method of the Wit class.
+Note that you can also call Wit programmatically using the - Task ```<string> CaptureVoiceIntent()``` instance method of the Wit class.
 
-Acting on Wit.AIís response
+## Acting on Wit response
 
 Wit SDK returns WitResponse object, contains all data coming from Wit. Next code shows how to proceed a text message:
-
+```
 WitResponse witResponse = await wit.CaptureTextIntent(WitText.Text);
 
 if (witResponse.outcomes != null && witResponse.outcomes.Count > 0)
@@ -106,12 +110,12 @@ else
 {
    WitIntent.Text = "Intent not found";
 }
-
+```
 Note: you should mark your method as async to use await operator inside
 
-Run your app
-Thatís it! Just run the app in the emulator.
-Press the microphone button and say ìWake me up at 7amî.
+## Run your app
+That is it! Just run the app in the emulator.
+Press the microphone button and say `Wake me up at 7am`.
 Provided your instance has an ìalarmî intent, you should see this something like this
 
 Now go check your inbox.
