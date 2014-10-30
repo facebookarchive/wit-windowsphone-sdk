@@ -15,7 +15,7 @@ As we want to focus on the Wit SDK integration, the app will only display the us
 ## Prerequisites
 To follow this tutorial, you will need:
 
-- A Wit.ai account
+- A [Wit.ai] (https://wit.ai) account
 - [Windows Phone SDK](https://dev.windows.com/en-us/develop/download-phone-sdk) (tested on Windows Phone SDK 8.0 and Visual Studio 2012)
 
 ## The Windows Phone project
@@ -33,11 +33,11 @@ We will now pull Wit into the project.
 
 1. Grab the binary<br/>
 Grab the latest binary from our GitHub repo or build it from source.
-In Visual Studio use context menu on `Project - References`, `Add Reference...`, click on `Browse` and select `WitAI.dll` assembly
-Now, we need to add the resources (images, etc.) to our project.
+In Visual Studio use context menu on `Project - References`, `Add Reference...`, click on `Browse` and select `WitAI.dll` assembly<br/>
+2. Now, we need to add the resources (images, etc.) to our project.<br/>
 Choose `Add - Existing Item...` on `Assets` folder and select `microphone.png`
-2. Update WMAppManifest<br/>
-Network and Microphone permissions
+3. Update WMAppManifest<br/>
+Network and Microphone permissions<br/>
 Wit SDK requires `ID_CAP_MICROPHONE` and `ID_CAP_NETWORKING` to be enabled in the `WMAppManifest.xml` file
 
 ## Use Wit in your project!
@@ -58,10 +58,10 @@ Than we need to enter our access token so Wit.ai knows what instance we are quer
 You can grab it from your Wit console, under Settings\Access Token.
 
 ```
-<wit:WitMicButton AccessToken="CBP3OGVVJI23M5XAH7ARKOMDDSKB3HJV" />
+<wit:WitMicButton AccessToken="<AccessToken>" />
 ```
 
-WitMicButton provides several events related to voice capturing
+`WitMicButton` provides several events related to voice capturing
 
 subscribing to `WitMicButton` events in xaml:
 ```
@@ -92,7 +92,7 @@ private void WitMicButton_CaptureVoiceIntentCompleted(object sender, WitResponse
 }
 ```
 
-Note that you can also call Wit programmatically using the - Task ```<WitResponse> CaptureVoiceIntent()``` instance method of the Wit class.
+Note that you can also call Wit programmatically using the - ```Task <WitResponse> CaptureVoiceIntent()``` instance method of the Wit class.
 
 ## Acting on Wit response
 
