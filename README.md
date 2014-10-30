@@ -9,7 +9,7 @@ Windows Phone SDK for Wit
 This section will show you how to get started in minutes using the Wit SDK for Windows Phone
 
 Assumptions
-Weíll create a project from scratch, but you can easily apply this guide to any existing project.
+We'll create a project from scratch, but you can easily apply this guide to any existing project.
 As we want to focus on the Wit SDK integration, the app will only display the userís intent and the entities Wit.AI picked up.
 
 ## Prerequisites
@@ -21,7 +21,7 @@ To follow this tutorial, you will need:
 ## The Windows Phone project
 
 1. Start up Visual Studio
-Weíll start from a Windows Phone App [image 1.png]
+We'll start from a Windows Phone App [image 1.png]
 In Visual Studio, go to File > New > Project... or press Ctrl + Shift + N
 Select the Windows Phone App
 
@@ -48,7 +48,7 @@ add using WitAi; in usings section to any .cs file where you will use Wit SDK
 Adding the Wit button
 The SDK provides a WitMicButton control to simply record the userís voice and request the API
 
-Weíll add a recording button to the main screen of the app.
+We'll add a recording button to the main screen of the app.
 
 add xmlns:wit="clr-namespace:WitAi;assembly:WitAi" to xmlns section of MainPage.xaml
 
