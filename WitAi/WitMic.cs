@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
-namespace WitAi
+namespace Witai
 {
     internal class WitMic
     {
@@ -101,19 +101,19 @@ namespace WitAi
 
             witPipedStream.Write(speech);
 
-            //if (detectSpeechStop)
-            //{
-            //    if (talking == 1)
-            //    {
-            //        WitLog.Log("Start talking detected");
-            //    }
-            //    else if (talking == 0)
-            //    {
-            //        WitLog.Log("Stop talking detected");
+            if (detectSpeechStop)
+            {
+                if (talking == 1)
+                {
+                    WitLog.Log("Start talking detected");
+                }
+                else if (talking == 0)
+                {
+                    WitLog.Log("Stop talking detected");
 
-            //        StopRecording();
-            //    }
-            //}
+                    StopRecording();
+                }
+            }
         }
 
         /// <summary>

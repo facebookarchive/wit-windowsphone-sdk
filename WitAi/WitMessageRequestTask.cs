@@ -7,7 +7,7 @@ using Windows.Networking;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 
-namespace WitAi
+namespace Witai
 {
     public class WitMessageRequestTask
     {

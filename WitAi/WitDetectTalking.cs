@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace WitAi
+namespace Witai
 {
     internal class WitDetectTalking
     {
@@ -16,23 +16,12 @@ namespace WitAi
         {
             short[] samples_ = new short[samples.Length / 2];
 
-            double Sum = 0.0;
-
             for (int i = 0; i < samples.Length; i += 2)
             {
-                samples_[i / 2] = Math.Abs(BitConverter.ToInt16(samples, i));                
+                samples_[i / 2] = BitConverter.ToInt16(samples, i);
             }
 
             double[] dbfss = wvs_pcm16short2dbfs(samples_, samples_.Length);
-
-            for (int i = 0; i < samples_.Length; i++)
-            {
-                Sum += Math.Abs(samples_[i]);
-            }
-
-            double amplitude = Sum / samples_.Length; 
-
-            System.Diagnostics.Debug.WriteLine("db: " + amplitude);
 
             return wvs_detect_talking(state, samples_, samples_.Length);
         }
@@ -46,7 +35,7 @@ namespace WitAi
             dbfss = wvs_pcm16short2dbfs(samples, nb_samples);
             for (int i_sample = 0; i_sample < nb_samples; i_sample++) {
                 db = dbfss[i_sample];
-                if (double.IsInfinity(db)) {
+                if (double.IsInfinity(db) || double.IsNaN(db)) {
                     continue;
                 }
                 if (state.current_nb_samples == state.samples_per_frame) {
@@ -81,7 +70,6 @@ namespace WitAi
 
             action = -1;
             energy = frames_detector_esf_energy(samples, nb_samples);
-            //Debug.WriteLine("energy: " + energy);
 
             if (state.sequence <= state.init_frames)
             {
@@ -121,8 +109,8 @@ namespace WitAi
             state.sequence = 0;
             state.min_initialized = 0;
             state.init_frames = 30;
-            state.energy_threshold = 18.0;
-            state.previous_state_maxlen = 30;
+            state.energy_threshold = threshold;
+            state.previous_state_maxlen = 60;
             state.previous_state = new int[state.previous_state_maxlen];
             state.talking = 0;
             state.sample_rate = sample_rate;
@@ -152,7 +140,8 @@ namespace WitAi
             double[] dbfss = new double[size];
     
             for (int i = 0; i < size; i++) {
-                dbfss[i] = 0 - 20 * Math.Log10(Math.Abs(samples[i] / max_ref));
+                
+                dbfss[i] = 0 - 20 * Math.Log10(samples[i] / max_ref);
             }
     
             return dbfss;

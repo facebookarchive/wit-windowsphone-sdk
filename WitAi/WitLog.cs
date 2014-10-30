@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace WitAi
+namespace Witai
 {
     internal class WitLog
     {

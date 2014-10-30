@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Threading.Tasks;
 
-namespace WitAi
+namespace Witai
 {
     public class Wit
     {

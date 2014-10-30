@@ -7,7 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WitAiSample.Resources;
-using WitAi;
+using Witai;
 
 namespace WitAiSample
 {

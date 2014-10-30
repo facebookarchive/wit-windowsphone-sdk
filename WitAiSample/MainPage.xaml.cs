@@ -1,6 +1,6 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
-using WitAi;
+using Witai;
 
 namespace WitAiSample
 {

@@ -5,7 +5,7 @@ using Windows.Networking;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 
-namespace WitAi
+namespace Witai
 {
     internal class WitSpeechRequestTask
     {
@@ -48,7 +48,6 @@ namespace WitAi
         /// <returns>Unprocessed result from a server</returns>
         public async Task<string> UploadAsync()
         {
-            return null;
             return await Task.Run<string>(async () =>
             {
                 try

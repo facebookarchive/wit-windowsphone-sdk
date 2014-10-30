@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
-namespace WitAi
+namespace Witai
 {
     public class WitResponse
     {

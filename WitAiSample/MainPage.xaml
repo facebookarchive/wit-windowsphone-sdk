@@ -5,7 +5,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wit="clr-namespace:WitAi;assembly=WitAI"
+    xmlns:wit="clr-namespace:Witai;assembly=WitAI"
     x:Class="WitAiSample.MainPage"
     mc:Ignorable="d"
     SupportedOrientations="Portrait" Orientation="Portrait"
