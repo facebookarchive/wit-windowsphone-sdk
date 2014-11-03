@@ -96,18 +96,37 @@ Note that you can also call Wit programmatically using the - ```Task <WitRespons
 
 ## Acting on Wit response
 
-Wit SDK returns `WitResponse` object, contains all data coming from Wit. Next code shows how to proceed a text message:
+Wit SDK returns `WitResponse` object, contains all data coming from Wit. Next code shows how to proceed a text message. In this example you need a referenced `Newtonsoft.Json` to parse incoming entities
 ```
 WitResponse witResponse = await wit.CaptureTextIntent(WitText.Text);
 
 if (witResponse.outcomes != null && witResponse.outcomes.Count > 0)
 {
+   //Get first outcome intent from witResponse
    WitIntent.Text = "Intent = " + witResponse.outcomes[0].intent;
+   
+   // Check whether datetime entity is returned by Wit
+   if (witResponse.outcomes[0].entities.ContainsKey("datetime"))
+   {
+        //grab all values associated with datetime entity
+        List<WitDateTimeEntity> dateEntities = witResponse.outcomes[0].entities["datetime"].ToObject<List<WitDateTimeEntity>>();
+   }
 }
 else
 {
    WitIntent.Text = "Intent not found";
 }
+
+...
+
+// Custom class that matches datetime entity
+public class WitDateTimeEntity
+{
+    public string grain { get; set; }
+    public string type { get; set; }
+    public string value { get; set; }
+}
+
 ```
 Note: you should mark your method as `async` to use `await` operator inside
 
