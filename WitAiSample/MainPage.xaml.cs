@@ -1,5 +1,6 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
+using System.Collections.Generic;
 using Witai;
 
 namespace WitAiSample
@@ -28,6 +29,11 @@ namespace WitAiSample
                 if (witResponse != null && witResponse.outcomes != null && witResponse.outcomes.Count > 0)
                 {
                     WitIntent.Text = "Intent = " + witResponse.outcomes[0].intent;
+
+                    if (witResponse.outcomes[0].entities.ContainsKey("datetime"))
+                    {
+                        List<WitDateTimeEntity> dateEntities = witResponse.outcomes[0].entities["datetime"].ToObject<List<WitDateTimeEntity>>();
+                    }
                 }
                 else
                 {

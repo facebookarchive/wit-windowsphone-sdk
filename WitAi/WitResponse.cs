@@ -23,8 +23,14 @@ namespace Witai
         [JsonProperty("intent")]
         public string intent { get; set; }
         [JsonProperty("entities")]
-        public JObject entities { get; set; }
+        public Dictionary<string, JArray> entities { get; set; }
         [JsonProperty("confidence")]
         public double confidence { get; set; }
+    }
+
+    public class WitEntity
+    {
+        [JsonProperty("datetime")]
+        public JArray datetime { get; set; }
     }
 }
