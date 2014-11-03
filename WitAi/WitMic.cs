@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
+using WitAiVad;
 
 namespace Witai
 {
@@ -15,7 +18,8 @@ namespace Witai
         Microphone microphone;
         DispatcherTimer updateTimer;
         byte[] speech;
-        WitDetectTalking witDetectTalking;
+        //WitDetectTalking witDetectTalking;
+        WitVadWrapper witDetectTalking;
         bool detectSpeechStop;
 
         WitPipedStream witPipedStream;
@@ -50,7 +54,7 @@ namespace Witai
                 return;
             }
 
-            witDetectTalking = new WitDetectTalking();
+            witDetectTalking = new WitVadWrapper(8.0, 16000, 60);
 
             microphone.BufferDuration = TimeSpan.FromMilliseconds(100);
 
@@ -97,8 +101,8 @@ namespace Witai
         {
             int microphoneDataSize = microphone.GetData(speech);
 
-            int talking = witDetectTalking.Talking(speech);
-
+            int talking = witDetectTalking.Talking(speech.AsBuffer(), speech.Length);
+            
             witPipedStream.Write(speech);
 
             if (detectSpeechStop)
@@ -128,6 +132,9 @@ namespace Witai
                 microphone.BufferReady -= microphone_BufferReady;
 
                 updateTimer.Stop();
+
+                witDetectTalking.Clean();
+                witDetectTalking = null;
 
                 witPipedStream.InputCompleted();
             }

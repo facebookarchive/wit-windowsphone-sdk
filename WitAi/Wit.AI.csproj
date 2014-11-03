@@ -83,7 +83,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="WitDetectTalking.cs" />
     <Compile Include="WitLog.cs" />
     <Compile Include="WitMessageRequestTask.cs" />
     <Compile Include="WitMic.cs" />
@@ -119,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wit.AI.Vad\Wit.AI.Vad.vcxproj">
+      <Project>{130916DD-0E27-43BA-B092-464AED78068D}</Project>
+      <Name>Wit.AI.Vad</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

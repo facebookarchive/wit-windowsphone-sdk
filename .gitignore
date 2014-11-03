@@ -4,3 +4,9 @@
 /WitAi/*.user
 /WitAiSample/Bin
 /WitAiSample/obj
+/ARM
+/Debug
+/ipch
+/Wit.AI.Vad/ARM
+/Wit.AI.Vad/Debug
+/Wit.AI.Vad/Wit.AI.Vad.vcxproj.user
