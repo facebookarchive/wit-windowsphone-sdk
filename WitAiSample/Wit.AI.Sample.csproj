@@ -150,14 +150,16 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="WitAI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WitAi\Bin\x86\Debug\WitAI.dll</HintPath>
-    </Reference>
-    <Reference Include="WitAiVad, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WitAi\Bin\x86\Debug\WitAiVad.winmd</HintPath>
-    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wit.AI.Vad\Wit.AI.Vad.vcxproj">
+      <Project>{130916DD-0E27-43BA-B092-464AED78068D}</Project>
+      <Name>Wit.AI.Vad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WitAi\Wit.AI.csproj">
+      <Project>{3A14C811-3DB9-41DC-957D-D727752A4B70}</Project>
+      <Name>Wit.AI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
