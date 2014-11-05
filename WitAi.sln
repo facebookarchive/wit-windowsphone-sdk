@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Windows Phone
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wit.AI", "WitAi\Wit.AI.csproj", "{3A14C811-3DB9-41DC-957D-D727752A4B70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wit.AI.Sample", "WitAiSample\Wit.AI.Sample.csproj", "{A2B6341B-7D18-45C5-BE51-E67B579F839E}"
