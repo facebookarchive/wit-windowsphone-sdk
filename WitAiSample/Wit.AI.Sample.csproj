@@ -144,17 +144,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WitAi\Wit.AI.csproj">
-      <Project>{3A14C811-3DB9-41DC-957D-D727752A4B70}</Project>
-      <Name>Wit.AI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WitAI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WitAi\Bin\x86\Debug\WitAI.dll</HintPath>
+    </Reference>
+    <Reference Include="WitAiVad, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WitAi\Bin\x86\Debug\WitAiVad.winmd</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

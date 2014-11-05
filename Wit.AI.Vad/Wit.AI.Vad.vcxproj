@@ -58,6 +58,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>WitAiVad</TargetName>
+    <OutDir>$(SolutionDir)\WitAi\Bin\x86\$(Configuration)</OutDir>
+    <IntDir>temp\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <OutDir>$(SolutionDir)\WitAi\Bin\ARM\$(Configuration)</OutDir>
+    <TargetName>WitAiVad</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
