@@ -1,7 +1,7 @@
 wit-windowsphone-sdk
 ====================
 
-The Wit.ai Windows Phone SDK is the easiest way to integrate Wit.ai features into your Android application.
+The Wit.ai Windows Phone SDK is the easiest way to integrate Wit.ai features into your Windows Phone application.
 
 The SDK can capture intents and entities:
 
